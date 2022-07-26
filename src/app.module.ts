@@ -13,7 +13,7 @@ import { AppService } from "./app.service";
 @Module({
 	imports: [
 		ServeStaticModule.forRoot( {rootPath: path.resolve(__dirname, 'static')} ),
-		MongooseModule.forRoot("mongodb+srv://admin:admin@cluster0.terrcmi.mongodb.net/music-app?retryWrites=true&w=majority"),
+		MongooseModule.forRoot(process.env.MONGODB_URI),
 		TrackModule,
 		FileModule,
 	],
